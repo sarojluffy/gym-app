@@ -1,7 +1,11 @@
+import Navbar from "./Components/Navbar";
+
 function App() {
   return (
     <>
-      <div className=" app bg-red-300">okfsdfsf</div>
+      <div>
+        <Navbar />
+      </div>
     </>
   );
 }

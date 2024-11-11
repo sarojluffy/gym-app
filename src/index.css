@@ -5,10 +5,8 @@
 
 html,
 body,
-#root,
-.app {
+#root {
   height: 100%;
   width: 100%;
-  font-family: "Doto", sans-serif;
-  @apply text-white;
+  font-family: "Montserrat", serif;
 }
