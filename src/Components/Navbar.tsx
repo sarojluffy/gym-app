@@ -1,10 +1,18 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
-import Logo from "../../public/photoes/Logo.png";
 
-type Props = {};
+import { useState } from "react";
+import logo from "/photoes/Logo.png";
+import NavComponents from "./subcomponents/NavComponents";
 
-const Navbar = (props: Props) => {
+type Props = {
+  selectedpage: string;
+  setselectedpage: (value: string) => void;
+};
+
+const Navbar = ({ selectedpage, setselectedpage }: Props) => {
   const flexBetween = "bg-red-100  flex items-center justify-between";
+
+  const [whichpage, setwhichpage] = useState<string>("");
 
   return (
     <div className={`${flexBetween} fixed w-full py-6`}>
@@ -14,16 +22,32 @@ const Navbar = (props: Props) => {
         <div className="">
           {" "}
           {/* left*/}
-          <img src={Logo} alt="EVOGYM logo" className=""></img>
+          <img src={logo} alt="EVOGYM logo" className=""></img>
         </div>
         <div className="flex justify-center items-center">
           {" "}
           {/* right*/}
           <div className="flex justify-center items-center gap-4">
-            <p>Home</p>
-            <p>Benefits</p>
-            <p>Our classes </p>
-            <p>Contact US</p>
+            <NavComponents
+              page="home"
+              selectedpage={selectedpage}
+              setselectedpage={setselectedpage}
+            />
+            <NavComponents
+              page="benefits"
+              selectedpage={selectedpage}
+              setselectedpage={setselectedpage}
+            />
+            <NavComponents
+              page="contact us"
+              selectedpage={selectedpage}
+              setselectedpage={setselectedpage}
+            />
+            <NavComponents
+              page="sign in"
+              selectedpage={selectedpage}
+              setselectedpage={setselectedpage}
+            />
           </div>
           <div className={`${flexBetween} gap-4`}>
             <p>Sign In </p>
