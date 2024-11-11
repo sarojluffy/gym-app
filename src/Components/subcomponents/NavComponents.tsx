@@ -20,6 +20,8 @@ const NavComponents = ({ page, selectedpage, setselectedpage }: Props) => {
         }}
         href={`#${lowercase}`}
       >
+        {" "}
+        {/* onclick wont work uinless the href is passed with the id of the div we are trying to scroll to*/}
         {page}
       </AnchorLink>
     </>
