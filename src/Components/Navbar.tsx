@@ -3,16 +3,17 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 import logo from "/photoes/Logo.png";
 import NavComponents from "./subcomponents/NavComponents";
+import Choosenpage from "../shared/Enums";
 
 type Props = {
-  selectedpage: string;
-  setselectedpage: (value: string) => void;
+  selectedpage: Choosenpage;
+  setselectedpage: (value: Choosenpage) => void;
 };
 
 const Navbar = ({ selectedpage, setselectedpage }: Props) => {
   const flexBetween = "bg-red-100  flex items-center justify-between";
 
-  const [whichpage, setwhichpage] = useState<string>("");
+  // const [whichpage, setwhichpage] = useState<string>("");
 
   return (
     <div className={`${flexBetween} fixed w-full py-6`}>
