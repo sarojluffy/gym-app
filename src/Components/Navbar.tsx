@@ -17,11 +17,14 @@ const Navbar = ({ selectedpage, setselectedpage }: Props) => {
   const flexBetween = " flex items-center justify-between";
   const AboveMediumScreens = useMediaQuery("(min-width:1060px)"); // this returns boolean
   // const [whichpage, setwhichpage] = useState<string>("");
-
+  const [toogle, setToogle] = useState<boolean>(false);
   return (
     <>
-      <div>
+      <nav>
         <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
+          {" "}
+          {/*  fixed does two stuff at a time , fix the position , and the defaylt w-full of div is reduced to the contetnt of the div*/}
+          {/*  */}
           <div className={`${flexBetween} mx-auto w-5/6`}>
             <div className={`${flexBetween} w-full gap-16`}>
               <img alt="logo" src={logo} />
@@ -61,15 +64,59 @@ const Navbar = ({ selectedpage, setselectedpage }: Props) => {
                 </>
               ) : (
                 <>
-                  <button className="p-1 bg-secondary-500 rounded-full ">
-                    <Bars3Icon className="size-3 text-white" />
+                  <button
+                    className="p-2 bg-secondary-500 rounded-full "
+                    onClick={() => {
+                      setToogle(!toogle);
+                    }}
+                  >
+                    <Bars3Icon className="size-5 text-white" />
                   </button>
                 </>
               )}
             </div>
           </div>
         </div>
-      </div>
+      </nav>
+
+      {toogle && !AboveMediumScreens ? (
+        <>
+          {/* mobile toogle*/}
+          <div className="flex flex-col  justify-center items-center fixed right-0 h-full bg-primary-100 z-40 w-[50%] shadow-xl ">
+            <div
+              className="flex justify-end w-[80%] "
+              onClick={() => setToogle(!toogle)}
+            >
+              <XMarkIcon className="size-6 text-gray-600" />
+            </div>
+            <div className="flex h-5/6 flex-col gap-8 text-2xl">
+              {" "}
+              <NavComponents
+                page="Home"
+                selectedpage={selectedpage}
+                setselectedpage={setselectedpage}
+              />
+              <NavComponents
+                page="Benefits"
+                selectedpage={selectedpage}
+                setselectedpage={setselectedpage}
+              />
+              <NavComponents
+                page="Our Classes"
+                selectedpage={selectedpage}
+                setselectedpage={setselectedpage}
+              />
+              <NavComponents
+                page="Contact Us"
+                selectedpage={selectedpage}
+                setselectedpage={setselectedpage}
+              />
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

@@ -18,7 +18,7 @@ const NavComponents = ({ page, selectedpage, setselectedpage }: Props) => {
       <AnchorLink
         className={`${
           selectedpage === lowercase ? "text-primary-500" : ""
-        } hover:text-primary-300`}
+        } hover:text-primary-300 transition hover:ease-in-out`}
         href="#abc"
         onClick={() => {
           setselectedpage(lowercase);
