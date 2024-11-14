@@ -11,7 +11,8 @@ const Actionbutton = ({ children }: Props) => {
       href=""
       className="bg-secondary-500 rounded-md px-3 py-1 hover:bg-primary-300 hover:text-white transition ease-in-out"
     >
-      {childrenn}
+      {children}
+      {children}
     </AnchorLink>
   );
 };
