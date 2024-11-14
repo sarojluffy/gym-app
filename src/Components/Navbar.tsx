@@ -5,23 +5,34 @@ import logo from "/photoes/Logo.png";
 import NavComponents from "./subcomponents/NavComponents";
 import Choosenpage from "../shared/Enums";
 import useMediaQuery from "../mediaquery/mediaq";
-import Selectbutton from "./subcomponents/Actionbutton";
 import Actionbutton from "./subcomponents/Actionbutton";
 
 type Props = {
   selectedpage: Choosenpage;
   setselectedpage: (value: Choosenpage) => void;
+  ScrollisTopOfPage: boolean;
 };
 
-const Navbar = ({ selectedpage, setselectedpage }: Props) => {
+const Navbar = ({
+  selectedpage,
+  setselectedpage,
+  ScrollisTopOfPage,
+}: Props) => {
   const flexBetween = " flex items-center justify-between";
   const AboveMediumScreens = useMediaQuery("(min-width:1060px)"); // this returns boolean
   // const [whichpage, setwhichpage] = useState<string>("");
   const [toogle, setToogle] = useState<boolean>(false);
+
+  const NavbackgroundScroll = ScrollisTopOfPage ? "" : "bg-primary-100";
+
+  console.log(NavbackgroundScroll);
+
   return (
     <>
       <nav>
-        <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
+        <div
+          className={`${flexBetween} ${NavbackgroundScroll} fixed top-0 z-30 w-full py-6`}
+        >
           {" "}
           {/*  fixed does two stuff at a time , fix the position , and the defaylt w-full of div is reduced to the contetnt of the div*/}
           {/*  */}
