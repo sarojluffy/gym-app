@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
 import Choosenpage from "./shared/Enums";
+import Home from "./Components/Home";
 
 function App() {
   const [selectedpage, setselectedpage] = useState<Choosenpage>(
@@ -24,12 +25,14 @@ function App() {
   //
   return (
     <>
-      <div>
+      <div className="app">
         <Navbar
           selectedpage={selectedpage}
           setselectedpage={setselectedpage}
           ScrollisTopOfPage={ScrollisTopOfPage}
         />
+
+        <Home setselectedpage={setselectedpage} />
       </div>
     </>
   );
