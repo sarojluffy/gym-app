@@ -16,8 +16,10 @@ const Home = ({ setselectedpage }: Props) => {
   const AboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
     <>
-      <section className=" bg-gray-50 md:h-full py-10">
+      <section className=" bg-gray-50 md:h-full py-10 md:pb-0 gap-16">
         {/* h-full is done only for md because in mob screen we have to scroll the same content where we didnt have to in md, hencnce the h-full properties will only be better in first full height of phone and the remaining might be tatti  */}
+
+        {/* also remember why there are py-10 md:pb-0 */}
         {/* heading and images */}
         <div className=" w-5/6 mx-auto md:flex md:h-full items-center ">
           {/* h-full evaluation ko lai yaxis ma compress expand and bg color rakhera also see */}
@@ -46,7 +48,10 @@ const Home = ({ setselectedpage }: Props) => {
           </div>
 
           {/* image */}
-          <div className="md:ml-40 md:basis-3/5 md:justify-items-end ">
+          <div
+            className="flex basis-3/5 justify-center md:z-10
+              md:ml-40 md:mt-16 md:justify-items-end"
+          >
             {/* basis ma  justify-items-end wala property haru chalne raicha  */}
             <img src={Homepagegraphics}></img>
           </div>
