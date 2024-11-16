@@ -15,55 +15,44 @@ type Props = {
 const Home = ({ setselectedpage }: Props) => {
   const AboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
-    <section id="home" className="bg-gray-20  py-10  h-full ">
-      {/* headers and image */}
-      <div className="w-5/6 mx-auto mt-20  md:flex  bg-red-400  gap-16 h-5/6">
-        {/* headers */}
-        <div>
-          {/* main headers  */}
-          <div className="my-8">
-            <div className="my-6">
-              <img src={Homepagetext}></img>
+    <>
+      <section className=" bg-gray-50 md:h-full py-10">
+        {/* h-full is done only for md because in mob screen we have to scroll the same content where we didnt have to in md, hencnce the h-full properties will only be better in first full height of phone and the remaining might be tatti  */}
+        {/* heading and images */}
+        <div className=" w-5/6 mx-auto md:flex md:h-full items-center ">
+          {/* h-full evaluation ko lai yaxis ma compress expand and bg color rakhera also see */}
+          {/* main headings */}
+          <div className=" mt-32 md:basis-3/5">
+            {/*  headings  */}
+            <div className="md:-mt-20">
+              <div>
+                <img src={Homepagetext}></img>
+              </div>
             </div>
-            <p className=" text-xs text-gray-500">
+            <p className="text-sm my-8">
               {" "}
               Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
               Studios to get the Body Shapes That you Dream of.. Get Your Dream
               Body Now.
             </p>
+            {/* buttons */}
+            <div className=" flex items-center gap-8">
+              <Actionbutton>join now</Actionbutton>
+
+              <AnchorLink>
+                <p>learn more</p>
+              </AnchorLink>
+            </div>
           </div>
 
-          {/* buttons */}
-          <div>
-            <Actionbutton setselectedpage={setselectedpage}>
-              join now
-            </Actionbutton>
-
-            <AnchorLink
-              className="text-primary-300 underline hover:text-secondary-500 mx-4"
-              href=""
-              //   onClick={}
-            >
-              learn more
-            </AnchorLink>
+          {/* image */}
+          <div className="md:ml-40 md:basis-3/5 md:justify-items-end ">
+            {/* basis ma  justify-items-end wala property haru chalne raicha  */}
+            <img src={Homepagegraphics}></img>
           </div>
         </div>
-        {/* home image */}
-        <div>
-          <img src={Homepagegraphics}></img>
-        </div>
-      </div>
-
-      {AboveMediumScreens && (
-        <div>
-          <div>
-            <img src={sponserForbes} alt="sponserforbes"></img>
-            <img src={sponserFortune} alt="sponserfortune"></img>
-            <img src={sponserRedBull} alt="sponserredbull"></img>
-          </div>
-        </div>
-      )}
-    </section>
+      </section>
+    </>
   );
 };
 
