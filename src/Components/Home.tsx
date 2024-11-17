@@ -2,9 +2,9 @@ import useMediaQuery from "../mediaquery/mediaq";
 import Actionbutton from "./subcomponents/Actionbutton";
 import Homepagetext from "../../public/photoes/HomePageText.png";
 import Homepagegraphics from "../../public/photoes/HomePageGraphic.png";
-import sponserRedBull from "../../public/photoes/SponsorRedBull.png";
-import sponserForbes from "../../public/photoes/SponsorForbes.png";
-import sponserFortune from "../../public/photoes/SponsorFortune.png";
+import sponserRedBull from "/photoes/SponsorRedBull.png";
+import sponserForbes from "/photoes/SponsorForbes.png";
+import sponserFortune from "/photoes/SponsorFortune.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Choosenpage from "../shared/Enums";
 
@@ -21,7 +21,7 @@ const Home = ({ setselectedpage }: Props) => {
 
         {/* also remember why there are py-10 md:pb-0 */}
         {/* heading and images */}
-        <div className=" w-5/6 mx-auto md:flex md:h-full items-center ">
+        <div className=" w-5/6 mx-auto md:flex md:h-5/6 items-center ">
           {/* h-full evaluation ko lai yaxis ma compress expand and bg color rakhera also see */}
           {/* main headings */}
           <div className=" mt-32 md:basis-3/5">
@@ -39,9 +39,11 @@ const Home = ({ setselectedpage }: Props) => {
             </p>
             {/* buttons */}
             <div className=" flex items-center gap-8">
-              <Actionbutton>join now</Actionbutton>
+              <Actionbutton setselectedpage={setselectedpage}>
+                join now
+              </Actionbutton>
 
-              <AnchorLink>
+              <AnchorLink className="text-primary-500 underline hover:text-secondary-500">
                 <p>learn more</p>
               </AnchorLink>
             </div>
@@ -49,13 +51,24 @@ const Home = ({ setselectedpage }: Props) => {
 
           {/* image */}
           <div
-            className="flex basis-3/5 justify-center md:z-10
-              md:ml-40 md:mt-16 md:justify-items-end"
+            className="flex md:basis-2/5  justify-center md:z-10
+              md:ml-40 md:mt-16 "
           >
             {/* basis ma  justify-items-end wala property haru chalne raicha  */}
             <img src={Homepagegraphics}></img>
           </div>
         </div>
+        {AboveMediumScreens && (
+          <div className="bg-primary-100 py-10">
+            <div className="  w-5/6 mx-auto">
+              <div className="flex items-center w-3/5 justify-between">
+                <img src={sponserForbes} alt="sponserForbes"></img>
+                <img src={sponserFortune} alt="sponserFortune"></img>
+                <img src={sponserRedBull} alt="sponserRedBull"></img>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
     </>
   );
