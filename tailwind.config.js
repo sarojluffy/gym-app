@@ -1,4 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
+// import dasda from "./public/photoes/EvolveText.png";
+// import dasda from "./public/photoes/HomePageText.png";
+// import dasda from "./public/photoes/image3";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -18,6 +22,16 @@ export default {
         xs: "480px",
         sm: "768px",
         md: "1060px",
+      },
+
+      // the font family enlisted here can be selected and  used anytime and the font in indexedDB.css are the ones that are by default applied
+      fontFamily: {
+        dmsans: ["DM Sans", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+      content: {
+        evolvetxt: "url('./public/photoes/EvolveText.png') ",
+        abc: "url('./public/photoes/image3.png') ",
       },
     },
   },
