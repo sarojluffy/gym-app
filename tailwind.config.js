@@ -30,8 +30,8 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
       },
       content: {
-        evolvetxt: "url('./public/photoes/EvolveText.png') ",
-        abc: "url('./public/photoes/image3.png') ",
+        evolvetxt: "url('/photoes/EvolveText.png') ",
+        // abc: "url('/photoes/image3.png') ",
       },
     },
   },
