@@ -16,7 +16,10 @@ const Home = ({ setselectedpage }: Props) => {
   const AboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
     <>
-      <section className=" bg-gray-20 md:h-full py-10 md:pb-0 gap-16 ">
+      <section
+        id="home"
+        className=" bg-gray-20 md:h-full py-10 md:pb-0 gap-16 "
+      >
         {/* h-full is done only for md because in mob screen we have to scroll the same content where we didnt have to in md, hencnce the h-full properties will only be better in first full height of phone and the remaining might be tatti  */}
 
         {/* also remember why there are py-10 md:pb-0 */}

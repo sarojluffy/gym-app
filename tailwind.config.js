@@ -31,6 +31,8 @@ export default {
       },
       content: {
         evolvetxt: "url('/photoes/EvolveText.png') ",
+        abstractwave: "url('/photoes/AbstractWaves.png') ",
+        sparkles: "url('/photoes/Sparkles.png') ",
         // abc: "url('/photoes/image3.png') ",
       },
     },
