@@ -58,7 +58,6 @@ const Benefit = ({ setselectedpage }: Props) => {
           <div className="md:my-5 md:w-3/5">
             <h1 className="text-3xl font-bold">MORE THAN JUST GYM.</h1>
             <p className="text-sm">
-              {" "}
               We provide world class fitness equipment, trainers and classes to
               get you to your ultimate fitness goals with ease. We provide true
               care into each and every member.
@@ -66,11 +65,11 @@ const Benefit = ({ setselectedpage }: Props) => {
           </div>
           <motion.div
             className="md:flex   gap-5 mt-5 "
-            initial="abc"
+            initial="xyz"
             whileInView="def"
             viewport={{ once: true, amount: 0.5 }}
             variants={{
-              abc: {},
+              xyz: {},
               def: {
                 transition: { staggerChildren: 0.1 },
               },
@@ -81,9 +80,10 @@ const Benefit = ({ setselectedpage }: Props) => {
                 <>
                   <motion.div
                     variants={{
-                      abc: { opacity: 0, scale: 0.9 },
+                      xyz: { opacity: 0, scale: 0.9 },
                       def: { opacity: 1, scale: 1 },
                     }}
+                    // this motion property comes from parent , the initial and while on view vaiables are same for the child divs
                     className=" border-2 border-slate-300 py-16 px-6 mt-5 rounded-lg "
                   >
                     <div className="flex justify-center items-center">
